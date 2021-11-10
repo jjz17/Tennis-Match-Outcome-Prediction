@@ -1,6 +1,6 @@
-# Tennis-Match-Outcome-Prediction
+## Tennis-Match-Outcome-Prediction
 
-copy notebook into this directory
-git add notebook.ipynb
-git commit -m "message"
-git push
+# copy notebook into this directory
+# git add notebook.ipynb
+# git commit -m "message"
+# git push
