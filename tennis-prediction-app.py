@@ -218,6 +218,11 @@ def compute_set_stats(set_pbp):
 
     p1_fs_win = is_p1_set_winner(games[-1], len(games))
 
+    if p1_fs_win:
+        p1_fs_win = 1
+    else:
+        p1_fs_win = 0
+
     # SCALE BY CREATING Z-SCORES
     # fs_s1_momentum_count = (fs_s1_momentum_count - 5.56) / 2.760247
     # fs_s2_momentum_count = (fs_s2_momentum_count - 5.467027) / 2.941391
@@ -282,18 +287,18 @@ PBP
 
 ## Calculate molecular descriptors
 st.header('Computed set stats')
-stats = compute_set_stats(pbp_input)
+stats = compute_set_stats(PBP)
 labels = ['fs_s1_momentum_count', 'fs_s2_momentum_count', 'fs_s1_breaks_count', 'fs_s2_breaks_count',
             'fs_s1_aces_count', 'fs_s2_aces_count', 'fs_s1_points_count', 'fs_s2_points_count', 'p1_fs_win']
 stats
-for i in range(len(stats)):
-    cols = st.columns(2)
-    cols[0].write(stats[i])
-    cols[1].write(labels[i])
+
+info = pd.DataFrame()
+info['data'] = stats
+info['labels'] = labels
+st.table(info.set_index('labels'))
+
 scaled_stats = scale_features(stats)
 scaled_stats
-# X = generate(SMILES)
-# X[1:] # Skips the dummy first item
 
 ######################
 # Pre-built model

@@ -4,3 +4,6 @@
 # git add notebook.ipynb
 # git commit -m "message"
 # git push
+
+
+# To run: streamlit run tennis-prediction-app.py
