@@ -6,6 +6,7 @@ import sklearn
 import pandas as pd
 import streamlit as st
 import pickle
+import joblib
 from PIL import Image
 
 ######################
@@ -252,6 +253,12 @@ def scale_features(features):
     features[7] = (features[7] - 30.710270) / 9.418961
     return features
 
+def display_prediction(prediction):
+    if prediction == 1:
+        return 'P1 wins'
+    else:
+        return 'P2 wins'
+
 ######################
 # Page Title
 ######################
@@ -272,7 +279,7 @@ The prediction model is a Logistic Regression Model trained on data obtained fro
 # Input molecules (Side Panel)
 ######################
 
-st.sidebar.header('User Input Features')
+st.sidebar.header('User Input First Set PBP')
 st.text('Each point is described with one character:\nS (server won)\nR (returner won)\nA (ace)\nD (double fault)\nGames are delimited with the \';\' character\nThe \'/\' character indicates changes of serve during a tiebreak.')
 
 ## Read SMILES input
@@ -290,15 +297,20 @@ st.header('Computed set stats')
 stats = compute_set_stats(PBP)
 labels = ['fs_s1_momentum_count', 'fs_s2_momentum_count', 'fs_s1_breaks_count', 'fs_s2_breaks_count',
             'fs_s1_aces_count', 'fs_s2_aces_count', 'fs_s1_points_count', 'fs_s2_points_count', 'p1_fs_win']
-stats
+# stats
 
 info = pd.DataFrame()
-info['data'] = stats
 info['labels'] = labels
-st.table(info.set_index('labels'))
+info['data'] = stats
+# st.table(info.set_index('labels'))
+st.table(info)
 
-scaled_stats = scale_features(stats)
+# scaled_stats2 = scale_features(stats)
+st.header('Scaled set stats')
+scaler = joblib.load('tennis_minmax_scaler')
+scaled_stats = scaler.transform(np.array(stats).reshape(1,-1))
 scaled_stats
+# scaled_stats2
 
 ######################
 # Pre-built model
@@ -311,8 +323,13 @@ load_model = pickle.load(open('tennis_prediction_model.pk1', 'rb'))
 
 # Apply model to make predictions
 prediction = load_model.predict(np.array(scaled_stats).reshape(1,-1))
+prob = load_model.predict_proba(np.array(scaled_stats).reshape(1,-1))
 # prediction_proba = load_model.predict_proba(X)
 
-st.header('Predicted LogS values')
-# prediction[1:]  # Skips the dummy first item
-prediction
+st.header('Match Outcome Prediction')
+st.text(display_prediction(prediction))
+""
+'Prob P1 wins'
+prob[0][1]
+'Prob P2 wins'
+prob[0][0]
