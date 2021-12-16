@@ -8,159 +8,81 @@
 # To run: streamlit run tennis-prediction-app.py
 
 
-<!-- Add banner here -->
-
 # Tennis Match Outcome Prediction Model
+This project is a part of the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) at [Code for San Francisco](http://www.codeforsanfrancisco.org).  Other DSWG projects can be found at the [main GitHub repo](https://github.com/sfbrigade/data-science-wg).
 
-<!-- Add buttons here -->
+#### -- Project Status: [Active, On-Hold, Completed]
 
-<!-- Describe your project in brief -->
+## Project Intro/Objective
+The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
 
-<!-- The project title should be self explanotory and try not to make it a mouthful. (Although exceptions exist- **awesome-readme-writing-guide-for-open-source-projects** - would have been a cool name)
+### Partner
+* [Name of Partner organization/Government department etc..]
+* Website for partner
+* Partner contact: [Name of Contact], [slack handle of contact if any]
+* If you do not have a partner leave this section out
 
-Add a cover/banner image for your README. **Why?** Because it easily **grabs people's attention** and it **looks cool**(*duh!obviously!*).
+### Methods Used
+* Inferential Statistics
+* Machine Learning
+* Data Visualization
+* Predictive Modeling
+* etc.
 
-The best dimensions for the banner is **1280x650px**. You could also use this for social preview of your repo.
+### Technologies
+* R 
+* Python
+* D3
+* PostGres, MySql
+* Pandas, jupyter
+* HTML
+* JavaScript
+* etc. 
 
-I personally use [**Canva**](https://www.canva.com/) for creating the banner images. All the basic stuff is **free**(*you won't need the pro version in most cases*).
+## Project Description
+(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
 
-There are endless badges that you could use in your projects. And they do depend on the project. Some of the ones that I commonly use in every projects are given below. 
+## Needs of this project
 
-I use [**Shields IO**](https://shields.io/) for making badges. It is a simple and easy to use tool that you can use for almost all your badge cravings. -->
+- frontend developers
+- data exploration/descriptive statistics
+- data processing/cleaning
+- statistical modeling
+- writeup/reporting
+- etc. (be as specific as possible)
 
-<!-- Some badges that you could use -->
+## Getting Started
 
-<!-- ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/navendu-pottekkat/awesome-readme?include_prereleases)
-: This badge shows the version of the current release.
+1. Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
+2. Raw Data is being kept [here](Repo folder containing raw data) within this repo.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/navendu-pottekkat/awesome-readme)
-: I think it is self-explanatory. This gives people an idea about how the project is being maintained.
+    *If using offline data mention that and how they may obtain the data from the froup)*
+    
+3. Data processing/transformation scripts are being kept [here](Repo folder containing data processing scripts/notebooks)
+4. etc...
 
-![GitHub issues](https://img.shields.io/github/issues-raw/navendu-pottekkat/awesome-readme)
-: This is a dynamic badge from [**Shields IO**](https://shields.io/) that tracks issues in your project and gets updated automatically. It gives the user an idea about the issues and they can just click the badge to view the issues.
+*If your project is well underway and setup is fairly complicated (ie. requires installation of many packages) create another "setup.md" file and link to it here*  
 
-![GitHub pull requests](https://img.shields.io/github/issues-pr/navendu-pottekkat/awesome-readme)
-: This is also a dynamic badge that tracks pull requests. This notifies the maintainers of the project when a new pull request comes.
+5. Follow setup [instructions](Link to file)
 
-![GitHub All Releases](https://img.shields.io/github/downloads/navendu-pottekkat/awesome-readme/total): If you are not like me and your project gets a lot of downloads(*I envy you*) then you should have a badge that shows the number of downloads! This lets others know how **Awesome** your project is and is worth contributing to.
+## Featured Notebooks/Analysis/Deliverables
+* [Notebook/Markdown/Slide Deck Title](link)
+* [Notebook/Markdown/Slide DeckTitle](link)
+* [Blog Post](link)
 
-![GitHub](https://img.shields.io/github/license/navendu-pottekkat/awesome-readme)
-: This shows what kind of open-source license your project uses. This is good idea as it lets people know how they can use your project for themselves.
 
-![Tweet](https://img.shields.io/twitter/url?style=flat-square&logo=twitter&url=https%3A%2F%2Fnavendu.me%2Fnsfw-filter%2Findex.html): This is not essential but it is a cool way to let others know about your project! Clicking this button automatically opens twitter and writes a tweet about your project and link to it. All the user has to do is to click tweet. Isn't that neat? -->
+## Contributing DSWG Members
 
-# Demo-Preview
+**Team Leads (Contacts) : [Full Name](https://github.com/[github handle])(@slackHandle)**
 
-<!-- Add a demo for your project -->
+#### Other Members:
 
-<!-- After you have written about your project, it is a good idea to have a demo/preview(**video/gif/screenshots** are good options) of your project so that people can know what to expect in your project. You could also add the demo in the previous section with the product description.
+|Name     |  Slack Handle   | 
+|---------|-----------------|
+|[Full Name](https://github.com/[github handle])| @johnDoe        |
+|[Full Name](https://github.com/[github handle]) |     @janeDoe    |
 
-Here is a random GIF as a placeholder.
-
-![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
-
-# Table of contents
-
-<!-- After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
-
-Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README. -->
-
-- [Project Title](#project-title)
-- [Demo-Preview](#demo-preview)
-- [Table of contents](#table-of-contents)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Development](#development)
-- [Contribute](#contribute)
-    - [Sponsor](#sponsor)
-    - [Adding new features or fixing bugs](#adding-new-features-or-fixing-bugs)
-- [License](#license)
-- [Footer](#footer)
-
-# Installation
-[(Back to top)](#table-of-contents)
-
-<!-- *You might have noticed the **Back to top** button(if not, please notice, it's right there!). This is a good idea because it makes your README **easy to navigate.*** 
-
-The first one should be how to install(how to generally use your project or set-up for editing in their machine).
-
-This should give the users a concrete idea with instructions on how they can use your project repo with all the steps.
-
-Following this steps, **they should be able to run this in their device.**
-
-A method I use is after completing the README, I go through the instructions from scratch and check if it is working. -->
-
-<!-- Here is a sample instruction:
-
-To use this project, first clone the repo on your device using the command below:
-
-```git init```
-
-```git clone https://github.com/navendu-pottekkat/nsfw-filter.git``` -->
-
-# Usage
-[(Back to top)](#table-of-contents)
-
-<!-- This is optional and it is used to give the user info on how to use the project after installation. This could be added in the Installation section also. -->
-
-# Development
-[(Back to top)](#table-of-contents)
-
-<!-- This is the place where you give instructions to developers on how to modify the code.
-
-You could give **instructions in depth** of **how the code works** and how everything is put together.
-
-You could also give specific instructions to how they can setup their development environment.
-
-Ideally, you should keep the README simple. If you need to add more complex explanations, use a wiki. Check out [this wiki](https://github.com/navendu-pottekkat/nsfw-filter/wiki) for inspiration. -->
-
-# Contribute
-[(Back to top)](#table-of-contents)
-
-<!-- This is where you can let people know how they can **contribute** to your project. Some of the ways are given below.
-
-Also this shows how you can add subsections within a section. -->
-
-### Sponsor
-[(Back to top)](#table-of-contents)
-
-<!-- Your project is gaining traction and it is being used by thousands of people(***with this README there will be even more***). Now it would be a good time to look for people or organisations to sponsor your project. This could be because you are not generating any revenue from your project and you require money for keeping the project alive.
-
-You could add how people can sponsor your project in this section. Add your patreon or GitHub sponsor link here for easy access.
-
-A good idea is to also display the sponsors with their organisation logos or badges to show them your love!(*Someday I will get a sponsor and I can show my love*) -->
-
-### Adding new features or fixing bugs
-[(Back to top)](#table-of-contents)
-
-<!-- This is to give people an idea how they can raise issues or feature requests in your projects. 
-
-You could also give guidelines for submitting and issue or a pull request to your project.
-
-Personally and by standard, you should use a [issue template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/ISSUE_TEMPLATE.md) and a [pull request template](https://github.com/navendu-pottekkat/nsfw-filter/blob/master/PULL_REQ_TEMPLATE.md)(click for examples) so that when a user opens a new issue they could easily format it as per your project guidelines.
-
-You could also add contact details for people to get in touch with you regarding your project. -->
-
-# License
-[(Back to top)](#table-of-contents)
-
-<!-- Adding the license to README is a good practice so that people can easily refer to it.
-
-Make sure you have added a LICENSE file in your project folder. **Shortcut:** Click add new file in your root of your repo in GitHub > Set file name to LICENSE > GitHub shows LICENSE templates > Choose the one that best suits your project!
-
-I personally add the name of the license and provide a link to it like below. -->
-
-[GNU General Public License version 3](https://opensource.org/licenses/GPL-3.0)
-
-# Footer
-[(Back to top)](#table-of-contents)
-
-<!-- Let's also add a footer because I love footers and also you **can** use this to convey important info.
-
-Let's make it an image because by now you have realised that multimedia in images == cool(*please notice the subtle programming joke). -->
-
-Leave a star in GitHub, give a clap in Medium and share this guide if you found this helpful.
-
-<!-- Add the footer here -->
-
-<!-- ![Footer](https://github.com/navendu-pottekkat/awesome-readme/blob/master/fooooooter.png) -->
+## Contact
+* If you haven't joined the SF Brigade Slack, [you can do that here](http://c4sf.me/slack).  
+* Our slack channel is `#datasci-projectname`
+* Feel free to contact team leads with any questions or if you are interested in contributing!
