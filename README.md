@@ -5,13 +5,12 @@
 # git commit -m "message"
 # git push
 
-
 # To run: streamlit run tennis-prediction-app.py
 
 
 <!-- Add banner here -->
 
-# Project Title
+# Tennis Match Outcome Prediction Model
 
 <!-- Add buttons here -->
 
