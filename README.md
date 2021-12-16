@@ -4,13 +4,7 @@ This project is a part of the [Data Science Working Group](http://datascience.co
 #### -- Project Status: [Active, On-Hold, Completed]
 
 ## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
-
-### Partner
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact], [slack handle of contact if any]
-* If you do not have a partner leave this section out
+The purpose of this project is to build a classification ML model that can predict the outcome (winner) of a tennis match, given a play-by-play of the first set. This model can have a variety of applications, as an informative resource for sports-betting, an aid to players and coaches on where to improve their game to maximize winnings, etc. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
 
 ### Methods Used
 * Inferential Statistics
@@ -20,13 +14,9 @@ The purpose of this project is ________. (Describe the main goals of the project
 * etc.
 
 ### Technologies
-* R 
 * Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
+* Pandas
+* Jupyter
 * etc. 
 
 ## Project Description
