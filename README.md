@@ -1,5 +1,5 @@
 # Tennis Match Outcome Prediction Model
-This project is a part of the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) at [Code for San Francisco](http://www.codeforsanfrancisco.org).  Other DSWG projects can be found at the [main GitHub repo](https://github.com/sfbrigade/data-science-wg).
+This project is an individual project created through the project track of the [Snowball Initiative](https://dataclub.northeastern.edu/snowball/) at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
 
 #### -- Project Status: Active [Active, On-Hold, Completed]
 
