@@ -1,7 +1,7 @@
 # Tennis Match Outcome Prediction Model
 This project is a part of the [Data Science Working Group](http://datascience.codeforsanfrancisco.org) at [Code for San Francisco](http://www.codeforsanfrancisco.org).  Other DSWG projects can be found at the [main GitHub repo](https://github.com/sfbrigade/data-science-wg).
 
-#### -- Project Status: [Active, On-Hold, Completed]
+#### -- Project Status: Active [Active, On-Hold, Completed]
 
 ## Project Intro/Objective
 The purpose of this project is to build a classification ML model that can predict the outcome (winner) of a tennis match, given a play-by-play of the first set. This model can have a variety of applications, as an informative resource for sports-betting, an aid to players and coaches on where to improve their game to maximize winnings, etc. (Describe the main goals of the project and potential civic impact. Limit to a short paragraph, 3-6 Sentences)
@@ -20,7 +20,14 @@ The purpose of this project is to build a classification ML model that can predi
 * etc. 
 
 ## Project Description
-(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modelling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
+### The Problem
+The outcomes of tennis matches are notoriously difficult to predict, due to the volatile nature of the sport: changes in momentum, effects from the audience, and a variety of other factors all contribute to its unpredictability. In this project, I will be tackling this historical challenge, by building a ML model that predicts the outcome of tennis matches solely based upon play-by-play data from the first set. To do this, I plan on studying and normalizing tennis match data to discover particular features, and to engineer features of my own, which will be fed into a machine learning algorithm to have the match outcomes predicted. I will be looking to discover which variables are most indicative of the match outcomes, and to attempt to create new variables from the existing ones which will further aid the machine learning models. I also plan on testing the data with a variety of different models to determine which one produces the most accurate results.
+\
+\
+I will be testing a variety of classification algorithms, including Logistic Regression, k-Nearest Neighbors, etc.
+\
+\
+(Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modeling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
 
 ## Needs of this project
 
