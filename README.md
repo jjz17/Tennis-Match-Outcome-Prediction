@@ -17,6 +17,7 @@ The purpose of this project is to build a classification ML model that can predi
 * Python
 * Pandas
 * Jupyter
+* Scikit-Learn
 * etc. 
 
 ## Project Description
