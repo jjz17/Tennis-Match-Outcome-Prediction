@@ -1,7 +1,7 @@
 # Tennis Match Outcome Prediction Model
 This project is an individual project created through the Project Track of the [Snowball Initiative](https://dataclub.northeastern.edu/snowball/) at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
 
-#### -- Project Status: Active [Active, On-Hold, Completed]
+#### -- Project Status: Active            [Active, On-Hold, Completed]
 
 ## Project Intro/Objective
 The purpose of this project is to build a Classification Machine Learning model that can predict the outcome (winner) of a tennis match, given the play-by-play data of the first set. The target applications of this model are widespread: it can be leveraged as an informative resource for sports-betting, a guide to players and coaches on the improvements that will maximize winning potential, and much more. While the model is currently trained on data from professional men's tennis matches, it can be expanded in the future for compatibility with the women's tour and even for recreational/casual players.
