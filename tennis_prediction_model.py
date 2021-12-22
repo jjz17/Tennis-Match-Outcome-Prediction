@@ -1,11 +1,14 @@
-import numpy as np
+# Data Preprocessing and Wrangling
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 import functions as f
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
+# Data Visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+# Machine Learning
 import joblib
+import pickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.naive_bayes import GaussianNB
@@ -141,10 +144,10 @@ plot_data = data[['p1_win_fs', 'p1_win']]
 
 plot_data.groupby('p1_win_fs').p1_win.value_counts().unstack(0).plot.barh()
 
-#%%
+# %%
 plot = sns.catplot(x='p1_win', y='fs_s1_points', kind='box', data=data)
 plt.show()
-#%%
+# %%
 sns.catplot(x='p1_win', y='fs_s2_points', kind='box', data=data)
 
 rel_columns = ['fs_s1_momentum', 'fs_s2_momentum',
@@ -172,14 +175,13 @@ joblib.dump(scaler, scaler_filename)
 X_train_scaled = scaler.transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-
 # Parameter grids for Validation/Optimization
-logi_param_grid = {"penalty":['l1', 'l2']}
-svc_param_grid = {"penalty":['l1', 'l2']}
+logi_param_grid = {"penalty": ['l1', 'l2']}
+svc_param_grid = {"penalty": ['l1', 'l2']}
 # 17 is optimal for knn
-knn_param_grid = {"n_neighbors":[1, 5, 10, 20], "metric": ['euclidean', 'manhattan', 'minkowski']}
+knn_param_grid = {"n_neighbors": [1, 5, 10, 20], "metric": ['euclidean', 'manhattan', 'minkowski']}
 nb_param_grid = {}
-tree_param_grid = {"criterion":['gini', 'entropy'], "splitter":['best', 'random']}
+tree_param_grid = {"criterion": ['gini', 'entropy'], "splitter": ['best', 'random']}
 
 # Dictionary of models with their parameter grids
 estimators = {
@@ -198,3 +200,6 @@ f.classifiers_percentage_split(X_train_scaled, X_test_scaled, y_train, y_test, e
 
 # Tune models
 f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimators, best_models)
+
+# Export Logistic Regression Model
+pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
