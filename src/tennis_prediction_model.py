@@ -1,6 +1,6 @@
 # Data Preprocessing and Wrangling
 import pandas as pd
-import functions as f
+from src import functions as f
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 # Data Visualization
@@ -168,7 +168,7 @@ scaler = MinMaxScaler()
 scaler.fit(X_train)
 
 # Export scaler
-scaler_filename = "tennis_minmax_scaler"
+scaler_filename = "../tennis_minmax_scaler"
 joblib.dump(scaler, scaler_filename)
 
 # transform X_train and X_test based on the (same) scaler
@@ -202,4 +202,4 @@ f.classifiers_percentage_split(X_train_scaled, X_test_scaled, y_train, y_test, e
 f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimators, best_models)
 
 # Export Logistic Regression Model
-pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
+pickle.dump(best_models['Logistic Regression'], open('../tennis_prediction_model.pk1', 'wb'))
