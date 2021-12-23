@@ -185,14 +185,40 @@ knn_param_grid = {"n_neighbors": [1, 5, 10, 20], "metric": ['euclidean', 'manhat
 nb_param_grid = {}
 tree_param_grid = {"criterion": ['gini', 'entropy'], "splitter": ['best', 'random']}
 
-# Dictionary of models with their parameter grids
+# ML Models
+logi_reg = LogisticRegression(solver='liblinear')
+knn = KNeighborsClassifier()
+lin_svc = LinearSVC(max_iter=1000000)
+gauss_nb = GaussianNB()
+tree = DecisionTreeClassifier()
+tree2 = DecisionTreeClassifier(max_depth=3)
+
+# Dictionary of models
 estimators = {
-    'Logistic Regression': [LogisticRegression(solver='liblinear'), logi_param_grid],
-    'k-Nearest Neighbor': [KNeighborsClassifier(), knn_param_grid],
-    'Support Vector Machine': [LinearSVC(max_iter=1000000), svc_param_grid],
-    'Gaussian Naive Bayes': [GaussianNB(), nb_param_grid],
-    'Decision Tree': [DecisionTreeClassifier(), tree_param_grid],
-    'Second Decision Tree': [DecisionTreeClassifier(max_depth=3), tree_param_grid]}
+    'Logistic Regression': logi_reg,
+    'k-Nearest Neighbor': knn,
+    'Support Vector Machine': lin_svc,
+    'Gaussian Naive Bayes': gauss_nb,
+    'Decision Tree': tree,
+    'Second Decision Tree': tree2}
+
+# Dictionary of models with their parameter grids
+estimators_with_grids = {
+    'Logistic Regression': [logi_reg, logi_param_grid],
+    'k-Nearest Neighbor': [knn, knn_param_grid],
+    'Support Vector Machine': [lin_svc, svc_param_grid],
+    'Gaussian Naive Bayes': [gauss_nb, nb_param_grid],
+    'Decision Tree': [tree, tree_param_grid],
+    'Second Decision Tree': [tree2, tree_param_grid]}
+
+# # Dictionary of models with their parameter grids
+# estimators = {
+#     'Logistic Regression': [LogisticRegression(solver='liblinear'), logi_param_grid],
+#     'k-Nearest Neighbor': [KNeighborsClassifier(), knn_param_grid],
+#     'Support Vector Machine': [LinearSVC(max_iter=1000000), svc_param_grid],
+#     'Gaussian Naive Bayes': [GaussianNB(), nb_param_grid],
+#     'Decision Tree': [DecisionTreeClassifier(), tree_param_grid],
+#     'Second Decision Tree': [DecisionTreeClassifier(max_depth=3), tree_param_grid]}
 
 # Dictionaries to store optimized model objects
 best_models = {}
@@ -201,13 +227,20 @@ best_models = {}
 f.classifiers_percentage_split(X_train_scaled, X_test_scaled, y_train, y_test, estimators)
 
 # Tune models
-f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimators, best_models)
+f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimators_with_grids, best_models)
 
 # Export Logistic Regression Model
 # pickle.dump(best_models['Logistic Regression'], open('../models/tennis_prediction_model2.pk1', 'wb'))
 # pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
-with open(r"models/logreg_model.pickle", "wb") as output_file:
-    cPickle.dump(best_models['Logistic Regression'], output_file)
+
+
+
+
+# with open(r"models/logreg_model.pickle", "wb") as output_file:
+#     cPickle.dump(best_models['Logistic Regression'], output_file)
+
+
+
 
 # print(os.path.abspath(os.curdir))
 # os.chdir('..')
