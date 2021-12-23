@@ -307,7 +307,7 @@ st.table(info)
 
 # scaled_stats2 = scale_features(stats)
 st.header('Scaled set stats')
-scaler = joblib.load('../tennis_minmax_scaler')
+scaler = joblib.load('../models/tennis_minmax_scaler')
 scaled_stats = scaler.transform(np.array(stats).reshape(1,-1))
 scaled_stats
 # scaled_stats2
@@ -317,7 +317,7 @@ scaled_stats
 ######################
 
 # Reads in saved model
-load_model = pickle.load(open('../tennis_prediction_model.pk1', 'rb'))
+load_model = pickle.load(open('../models/tennis_prediction_model.pk1', 'rb'))
 
 
 

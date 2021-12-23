@@ -1,4 +1,5 @@
 # Data Preprocessing and Wrangling
+import os
 import pandas as pd
 from src import functions as f
 from sklearn.model_selection import train_test_split
@@ -8,21 +9,21 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 # Machine Learning
 import joblib
-import pickle
+import _pickle as cPickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
-url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/pbp_matches_atp_qual_current.csv'
-data = pd.read_csv(url, index_col=0).drop('pbp_id', axis=1)
-data
+url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/pbp_matches_atp_qual_current' \
+      '.csv '
+# data = pd.read_csv(url, index_col=0).drop('pbp_id', axis=1)
+data = pd.read_csv(f'data{os.path.sep}pbp_matches_atp_qual_current.csv', index_col=0).drop(['pbp_id'], axis=1)
 
 # Drop Wimbledon Final Qualifiers because they are played to best of 5 instead of best of 3
 drop_list = data[data['tny_name'] == "Gentlemen'sWimbledonSinglesFinalRoundQualifying"].index
 data.drop(drop_list, inplace=True)
-data
 
 fs_pbp = []
 fs_game_count = []
@@ -168,8 +169,9 @@ scaler = MinMaxScaler()
 scaler.fit(X_train)
 
 # Export scaler
-scaler_filename = "../tennis_minmax_scaler"
-joblib.dump(scaler, scaler_filename)
+# scaler_filename = '../models/tennis_minmax_scaler2'
+# scaler_filename = 'tennis_minmax_scaler'
+# joblib.dump(scaler, scaler_filename)
 
 # transform X_train and X_test based on the (same) scaler
 X_train_scaled = scaler.transform(X_train)
@@ -202,4 +204,11 @@ f.classifiers_percentage_split(X_train_scaled, X_test_scaled, y_train, y_test, e
 f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimators, best_models)
 
 # Export Logistic Regression Model
-pickle.dump(best_models['Logistic Regression'], open('../tennis_prediction_model.pk1', 'wb'))
+# pickle.dump(best_models['Logistic Regression'], open('../models/tennis_prediction_model2.pk1', 'wb'))
+# pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
+with open(r"models/logreg_model.pickle", "wb") as output_file:
+    cPickle.dump(best_models['Logistic Regression'], output_file)
+
+# print(os.path.abspath(os.curdir))
+# os.chdir('..')
+# print(os.path.abspath(os.curdir))
