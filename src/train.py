@@ -11,7 +11,9 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 
-data = pd.read_csv(f'data{os.path.sep}pbp_matches_atp_qual_current.csv', index_col=0)
+# data = pd.read_csv(f'data{os.path.sep}pbp_matches_atp_qual_current.csv', index_col=0)
+url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
+data = pd.read_csv(url, index_col=0)
 
 rel_columns = ['fs_s1_momentum', 'fs_s2_momentum',
                'fs_s1_breaks', 'fs_s2_breaks', 'fs_s1_aces',
@@ -32,8 +34,8 @@ scaler.fit(X_train)
 
 # Export scaler
 # scaler_filename = '../models/tennis_minmax_scaler2'
-# scaler_filename = 'tennis_minmax_scaler'
-# joblib.dump(scaler, scaler_filename)
+scaler_filename = '../models/tennis_minmax_scaler'
+joblib.dump(scaler, scaler_filename)
 
 # transform X_train and X_test based on the (same) scaler
 X_train_scaled = scaler.transform(X_train)
@@ -85,7 +87,9 @@ f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimat
 # Export Logistic Regression Model
 # pickle.dump(best_models['Logistic Regression'], open('../models/tennis_prediction_model2.pk1', 'wb'))
 # pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
-with open(r"models/logreg_model.pickle", "wb") as output_file:
+# with open(r"models/logreg_model.pickle", "wb") as output_file:
+#     cPickle.dump(best_models['Logistic Regression'], output_file)
+with open('../models/logreg_model.pickle', 'wb') as output_file:
     cPickle.dump(best_models['Logistic Regression'], output_file)
 
 # print(os.path.abspath(os.curdir))
