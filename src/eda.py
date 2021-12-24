@@ -3,9 +3,9 @@ import seaborn as sns
 import os
 import pandas as pd
 
-# data = pd.read_csv(f'data{os.path.sep}wrangled_data.csv', index_col=0)
-url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
-data = pd.read_csv(url, index_col=0)
+data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index_col=0)
+# url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
+# data = pd.read_csv(url, index_col=0)
 
 # Data visualization
 plot_data = data[['p1_win_fs', 'p1_win']]

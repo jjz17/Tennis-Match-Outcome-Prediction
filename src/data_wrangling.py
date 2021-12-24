@@ -2,10 +2,10 @@ import os
 import pandas as pd
 from src import functions as f
 
-# data = pd.read_csv(f'data{os.path.sep}pbp_matches_atp_qual_current.csv', index_col=0).drop(['pbp_id'], axis=1)
-url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/pbp_matches_atp_qual_current' \
-      '.csv '
-data = pd.read_csv(url, index_col=0).drop('pbp_id', axis=1)
+data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}pbp_matches_atp_qual_current.csv', index_col=0).drop(['pbp_id'], axis=1)
+# url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/pbp_matches_atp_qual_current' \
+#       '.csv '
+# data = pd.read_csv(url, index_col=0).drop('pbp_id', axis=1)
 
 # Drop Wimbledon Final Qualifiers because they are played to best of 5 instead of best of 3
 drop_list = data[data['tny_name'] == "Gentlemen'sWimbledonSinglesFinalRoundQualifying"].index
@@ -127,4 +127,4 @@ data['p1_win_fs'] = data['p1_win_fs'].map({True: 1, False: 0})
 data = data.fillna(0)
 
 # data.to_csv(f'..data{os.path.sep}wrangled_data.csv, index=False')
-data.to_csv(f'wrangled_data.csv', index=False)
+data.to_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index=False)
