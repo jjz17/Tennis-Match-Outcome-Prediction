@@ -146,7 +146,7 @@ def momentum_check(pbp, tiebreak=False):
     return s_momentum, momentum
 
 
-def is_p1_set_winner(last_game_pbp, num_games):
+def is_s1_set_winner(last_game_pbp, num_games):
     """
     Determines whether player 1 won the first set.
 

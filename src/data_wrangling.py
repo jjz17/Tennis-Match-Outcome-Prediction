@@ -11,8 +11,8 @@ data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}pbp_matches_atp_qual_curren
 drop_list = data[data['tny_name'] == "Gentlemen'sWimbledonSinglesFinalRoundQualifying"].index
 data.drop(drop_list, inplace=True)
 
-fs_pbp = []
-fs_game_count = []
+first_set_pbp = []
+num_first_set_games = []
 
 # iterate through each match
 for i in data.index:
@@ -21,29 +21,30 @@ for i in data.index:
     # extract first set
     first_set = match.split('.')[0]
     # record first set pbp
-    fs_pbp.append(first_set)
+    first_set_pbp.append(first_set)
     # record number of games in first set
-    fs_game_count.append(first_set.count(';') + 1)
+    num_first_set_games.append(first_set.count(';') + 1)
 
-data['fs_pbp'] = fs_pbp
-data['num_fs_games'] = fs_game_count
+data['first set pbp'] = first_set_pbp
+data['# games in first set'] = num_first_set_games
 
 # Applying functions to transform data
-fs_s1_points = []
-fs_s2_points = []
-fs_s1_momentum = []
-fs_s2_momentum = []
-fs_s1_breaks = []
-fs_s2_breaks = []
-fs_s1_aces = []
-fs_s2_aces = []
-p1_win = []
-p1_win_first_set = []
+s1_first_set_points = []
+s2_first_set_points = []
+s1_first_set_momentum = []
+s2_first_set_momentum = []
+s1_first_set_breaks = []
+s2_first_set_breaks = []
+s1_first_set_aces = []
+s2_first_set_aces = []
+s1_win = []
+s1_win_first_set = []
 
-# Iterate through each match(row)
+# Iterate through each match (row)
 for i in data.index:
+
     # create list of games in the match
-    games = data.loc[i, 'fs_pbp'].split(';')
+    games = data.loc[i, 'first set pbp'].split(';')
 
     # Split games into those served by p1 and p2
     p1_s_games = games[::2]
@@ -54,74 +55,74 @@ for i in data.index:
     if (len(p1_s_games) == 7):
         tiebreak = p1_s_games.pop(6)
 
-    fs_s1_points_count = 0
-    fs_s2_points_count = 0
-    fs_s1_momentum_count = 0
-    fs_s2_momentum_count = 0
-    fs_s1_breaks_count = 0
-    fs_s2_breaks_count = 0
-    fs_s1_aces_count = 0
-    fs_s2_aces_count = 0
+    s1_num_first_set_points = 0
+    s2_num_first_set_points = 0
+    s1_num_first_set_momentum = 0
+    s2_num_first_set_momentum = 0
+    s1_num_first_set_breaks = 0
+    s2_num_first_set_breaks = 0
+    s1_num_first_set_aces = 0
+    s2_num_first_set_aces = 0
 
     # Aggregate data from p1 serving games
     for game in p1_s_games:
         game_data = f.extract_game_data(game)
-        fs_s1_points_count += game_data[0]
-        fs_s2_points_count += game_data[1]
-        fs_s1_momentum_count += game_data[2]
-        fs_s2_momentum_count += game_data[3]
-        fs_s2_breaks_count += game_data[4]
-        fs_s1_aces_count += game_data[5]
+        s1_num_first_set_points += game_data[0]
+        s2_num_first_set_points += game_data[1]
+        s1_num_first_set_momentum += game_data[2]
+        s2_num_first_set_momentum += game_data[3]
+        s2_num_first_set_breaks += game_data[4]
+        s1_num_first_set_aces += game_data[5]
 
     # Aggregate data from p2 serving games
     for game in p2_s_games:
         game_data = f.extract_game_data(game)
-        fs_s2_points_count += game_data[0]
-        fs_s1_points_count += game_data[1]
-        fs_s2_momentum_count += game_data[2]
-        fs_s1_momentum_count += game_data[3]
-        fs_s1_breaks_count += game_data[4]
-        fs_s2_aces_count += game_data[5]
+        s2_num_first_set_points += game_data[0]
+        s1_num_first_set_points += game_data[1]
+        s2_num_first_set_momentum += game_data[2]
+        s1_num_first_set_momentum += game_data[3]
+        s1_num_first_set_breaks += game_data[4]
+        s2_num_first_set_aces += game_data[5]
 
     # Aggregate data from tiebreak
     tb_data = f.extract_tiebreak_data(tiebreak)
-    fs_s1_points_count += tb_data[0]
-    fs_s2_points_count += tb_data[1]
-    fs_s1_momentum_count += tb_data[2]
-    fs_s2_momentum_count += tb_data[3]
-    fs_s1_aces_count += tb_data[4]
-    fs_s2_aces_count += tb_data[5]
+    s1_num_first_set_points += tb_data[0]
+    s2_num_first_set_points += tb_data[1]
+    s1_num_first_set_momentum += tb_data[2]
+    s2_num_first_set_momentum += tb_data[3]
+    s1_num_first_set_aces += tb_data[4]
+    s2_num_first_set_aces += tb_data[5]
 
     # Add the match's data to the lists
-    fs_s1_points.append(fs_s1_points_count)
-    fs_s2_points.append(fs_s2_points_count)
-    fs_s1_momentum.append(fs_s1_momentum_count)
-    fs_s2_momentum.append(fs_s2_momentum_count)
-    fs_s1_breaks.append(fs_s1_breaks_count)
-    fs_s2_breaks.append(fs_s2_breaks_count)
-    fs_s1_aces.append(fs_s1_aces_count)
-    fs_s2_aces.append(fs_s2_aces_count)
+    s1_first_set_points.append(s1_num_first_set_points)
+    s2_first_set_points.append(s2_num_first_set_points)
+    s1_first_set_momentum.append(s1_num_first_set_momentum)
+    s2_first_set_momentum.append(s2_num_first_set_momentum)
+    s1_first_set_breaks.append(s1_num_first_set_breaks)
+    s2_first_set_breaks.append(s2_num_first_set_breaks)
+    s1_first_set_aces.append(s1_num_first_set_aces)
+    s2_first_set_aces.append(s2_num_first_set_aces)
 
-    p1_win.append(data.loc[i, 'winner'] == 1)
+    s1_win.append(data.loc[i, 'winner'] == 1)
 
-    p1_win_first_set.append(f.is_p1_set_winner(games[-1], len(games)))
+    s1_win_first_set.append(f.is_s1_set_winner(games[-1], len(games)))
 
-data['fs_s1_points'] = fs_s1_points
-data['fs_s2_points'] = fs_s2_points
-data['fs_s1_momentum'] = fs_s1_momentum
-data['fs_s2_momentum'] = fs_s2_momentum
-data['fs_s1_breaks'] = fs_s1_breaks
-data['fs_s2_breaks'] = fs_s2_breaks
-data['fs_s1_aces'] = fs_s1_aces
-data['fs_s2_aces'] = fs_s2_aces
-data['p1_win'] = p1_win
-data['p1_win_fs'] = p1_win_first_set
+data['s1 fs points'] = s1_first_set_points
+data['s2 fs points'] = s2_first_set_points
+data['s1 fs momentum'] = s1_first_set_momentum
+data['s2 fs momentum'] = s2_first_set_momentum
+data['s1 fs breaks'] = s1_first_set_breaks
+data['s2 fs breaks'] = s2_first_set_breaks
+data['s1 fs aces'] = s1_first_set_aces
+data['s2 fs aces'] = s2_first_set_aces
+data['s1 win'] = s1_win
+data['s1 fs win'] = s1_win_first_set
 
 # label encoding for features
 
 # 1 if p1 win, 0 if p2 win
-data['p1_win'] = data['p1_win'].map({True: 1, False: 0})
-data['p1_win_fs'] = data['p1_win_fs'].map({True: 1, False: 0})
+data['s1 win'] = data['s1 win'].map({True: 1, False: 0})
+data['s1 fs win'] = data['s1 fs win'].map({True: 1, False: 0})
 
 # Replace na with 0
 data = data.fillna(0)

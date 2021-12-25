@@ -15,9 +15,9 @@ data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index_c
 # url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
 # data = pd.read_csv(url, index_col=0)
 
-rel_columns = ['fs_s1_momentum', 'fs_s2_momentum',
-               'fs_s1_breaks', 'fs_s2_breaks', 'fs_s1_aces',
-               'fs_s2_aces', 'fs_s1_points', 'fs_s2_points', 'p1_win_fs', 'p1_win']
+rel_columns = ['s1 fs momentum', 's2 fs momentum',
+               's1 fs breaks', 's2 fs breaks', 's1 fs aces',
+               's2 fs aces', 's1 fs points', 's2 fs points', 's1 fs win', 's1 win']
 
 ml_data = data[rel_columns]
 
