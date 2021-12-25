@@ -36,10 +36,10 @@ I will be testing a variety of classification algorithms, including Logistic Reg
 
 ## Project Structure
 
-- raw dataset and preprocessed dataset are included under the data directory
-- model and scaler objects are included under the models directory
-- all source code (data wrangling, exploratory data analysis, model building) is included under the src directory
-- custom function are included under the functions directory
+- raw dataset and preprocessed dataset are included under the [data](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/data) directory
+- model and scaler objects are included under the [models](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/models) directory
+- all source code (data wrangling, exploratory data analysis, model building, custom functions) is included under the [src](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/src) directory
+- Jupyter Notebook work is included under the [notebooks](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/notebooks) directory
 
 ## Needs of this project
 
