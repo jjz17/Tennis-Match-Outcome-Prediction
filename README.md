@@ -34,6 +34,13 @@ I will be testing a variety of classification algorithms, including Logistic Reg
 \
 (Provide more detailed overview of the project.  Talk a bit about your data sources and what questions and hypothesis you are exploring. What specific data analysis/visualization and modeling work are you using to solve the problem? What blockers and challenges are you facing?  Feel free to number or bullet point things here)
 
+## Project Structure
+
+- raw dataset and preprocessed dataset are included under the data directory
+- model and scaler objects are included under the models directory
+- all source code (data wrangling, exploratory data analysis, model building) is included under the src directory
+- custom function are included under the functions directory
+
 ## Needs of this project
 
 - frontend developers
