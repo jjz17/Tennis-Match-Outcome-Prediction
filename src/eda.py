@@ -3,7 +3,7 @@ import seaborn as sns
 import os
 import pandas as pd
 
-data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index_col=0)
+data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv')
 # url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
 # data = pd.read_csv(url, index_col=0)
 
@@ -37,7 +37,7 @@ ml_data = data[rel_columns].reset_index()
 sns.heatmap(ml_data.corr())
 plt.show()
 
-#%%
+# %%
 most_important = ['s1 fs momentum', 's2 fs momentum', 's1 fs points', 's2 fs points', 's1 fs win', 's1 win']
 less_data = data[most_important].reset_index()
 # sns.pairplot(less_data)

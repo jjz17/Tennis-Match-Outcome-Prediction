@@ -127,5 +127,16 @@ data['s1 fs win'] = data['s1 fs win'].map({True: 1, False: 0})
 # Replace na with 0
 data = data.fillna(0)
 
+# Separating comeback games from the others
+
+comeback_data = []
+for i in data.index:
+    if data.loc[i, 's1 fs win'] == data.loc[i, 's1 win']:
+        comeback_data.append(0)
+    else:
+        comeback_data.append(1)
+
+data['comeback'] = comeback_data
+
 # data.to_csv(f'..data{os.path.sep}wrangled_data.csv, index=False')
 data.to_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index=False)
