@@ -55,3 +55,9 @@ plt.show()
 
 sns.relplot(x='s2 fs points', y='s2 fs momentum', hue='s1 win', data=less_data)
 plt.show()
+
+sns.relplot(x='s1 fs points', y='s2 fs points', hue='comeback', data=data)
+plt.show()
+
+sns.relplot(x='s1 fs momentum', y='s2 fs momentum', hue='comeback', data=data)
+plt.show()
