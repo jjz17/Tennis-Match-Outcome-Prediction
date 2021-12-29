@@ -61,3 +61,12 @@ plt.show()
 
 sns.relplot(x='s1 fs momentum', y='s2 fs momentum', hue='comeback', data=data)
 plt.show()
+
+#%%
+sns.countplot(x='comeback', data=data)
+plt.show()
+# sns.catplot(x='comeback', y='s1 fs points', kind='bar', data=data)
+# plt.title('Test')
+# plt.xlabel('Comeback')
+# plt.ylabel('Points Scored')
+# plt.show()
