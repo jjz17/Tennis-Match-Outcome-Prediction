@@ -3,7 +3,7 @@ This project is an individual project created through the Project Track of the [
 
 #### -- Project Status: Active
 
-## Project Intro/Objective
+## Project Objective
 The purpose of this project is to build a Classification Machine Learning model that can predict the outcome (winner) of a tennis match, given the play-by-play data of the first set. The target applications of this model are widespread: it can be leveraged as an informative resource for sports-betting, a guide to players and coaches on the improvements that will maximize winning potential, and much more. While the model is currently trained on data from professional men's tennis matches, it can be expanded in the future for compatibility with the women's tour and even for recreational/casual players.
 
 ### Methods Used
@@ -20,6 +20,10 @@ The purpose of this project is to build a Classification Machine Learning model 
 * Matplotlib
 
 ## Project Description
+* Created a tool that predicts tennis match outcomes (accuracy ~ 0.82) to help players, coaches, and fans to better understand factors that may influence win likelihood
+* Engineered features from the play-by-play records of first sets to quantify player performance
+* Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best model. 
+* Built a client facing API using streamlit
 ### The Problem
 The outcomes of tennis matches are notoriously difficult to predict, due to the volatile nature of the sport: changes in momentum, effects from the audience, and a variety of other factors all contribute to its unpredictability. In this project, I tackle this historical challenge, by building a Machine Learning model that predicts the outcome of tennis matches solely based upon play-by-play data from the first set. 
 ### The Data
