@@ -34,7 +34,7 @@ scaler.fit(X_train)
 
 # Export scaler
 # scaler_filename = '../models/tennis_minmax_scaler2'
-scaler_filename = '../models/tennis_minmax_scaler'
+scaler_filename = f'..{os.path.sep}models{os.path.sep}tennis_minmax_scaler'
 joblib.dump(scaler, scaler_filename)
 
 # transform X_train and X_test based on the (same) scaler
