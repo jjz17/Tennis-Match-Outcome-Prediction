@@ -9,19 +9,6 @@ This project is an individual project created through the Project Track of the [
 * Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best model. 
 * Built a client facing API using streamlit
 
-### Methods Used
-* Inferential Statistics
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-
-### Technologies
-* Python
-* Pandas
-* Jupyter
-* Scikit-Learn
-* Matplotlib
-
 ## Project Objective
 The purpose of this project is to build a Classification Machine Learning model that can predict the outcome (winner) of a tennis match, given the play-by-play data of the first set. The target applications of this model are widespread: it can be leveraged as an informative resource for sports-betting, a guide to players and coaches on the improvements that will maximize winning potential, and much more. While the model is currently trained on data from professional men's tennis matches, it can be expanded in the future for compatibility with the women's tour and even for recreational/casual players.
 
@@ -32,10 +19,20 @@ The purpose of this project is to build a Classification Machine Learning model 
 **Dataset GitHub:** https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/pbp_matches_atp_qual_current.csv  
 **Streamlit Productionization:** https://github.com/dataprofessor/code/tree/master/streamlit/part7
 
-## Data Cleaning
-After scraping the data, I needed to clean it up so that it was usable for our model. I made the following changes and created the following variables:
+## Methods Used
+* Inferential Statistics
+* Machine Learning
+* Data Visualization
+* Predictive Modeling
 
-*	Parsed numeric data out of salary 
+## Data Collection and Cleaning
+I acquired match data from [Jeff Sackmann's Github](https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/pbp_matches_atp_qual_current.csv).
+\
+\
+After downloading the data, I needed to clean it up so that it was usable for our model. I made the following changes and created the following variables:
+*	Parsed the 'play-by-play' strings into useful statistics, I wrote a family of functions that extract relevant data (points, aces, breaks). 
+Furthermore, I performed feature engineering by quantifying the 'momentum' of a player based on consecutive points won. 
+Through the process of data acquisition, cleaning, and wrangling, I ended up with 925 samples and 23 features.
 *	Made columns for employer provided salary and hourly wages 
 *	Removed rows without salary 
 *	Parsed rating out of company text 
