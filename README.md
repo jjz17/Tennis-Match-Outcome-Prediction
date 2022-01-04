@@ -4,7 +4,7 @@ This project is an individual project created through the Project Track of the [
 #### -- Project Status: Active
 
 ## Project Description
-* Created a tool that predicts tennis match outcomes (accuracy ~ 0.82) to help players, coaches, and fans to better understand factors that may influence win likelihood
+* Created a tool that predicts tennis match outcomes (accuracy ~ 0.8276) to help players, coaches, and fans to better understand factors that may influence win likelihood
 * Engineered features from the play-by-play records of first sets to quantify player performance
 * Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best model. 
 * Built a client facing API using streamlit
