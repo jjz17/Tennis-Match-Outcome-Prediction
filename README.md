@@ -1,5 +1,5 @@
 # Tennis Match Outcome Prediction Model
-This project is an individual project created through the Project Track of the [Snowball Initiative](https://dataclub.northeastern.edu/snowball/) at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
+This is an individual project created through the Project Track of the [Snowball Initiative](https://dataclub.northeastern.edu/snowball/) at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
 
 #### -- Project Status: Active
 
@@ -9,7 +9,7 @@ This project is an individual project created through the Project Track of the [
 * Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best model. 
 * Built a client facing API using streamlit
 
-## Project Objective
+## Purpose/Objective
 The purpose of this project is to build a Classification Machine Learning model that can predict the outcome (winner) of a tennis match, given the play-by-play data of the first set. The target applications of this model are widespread: it can be leveraged as an informative resource for sports-betting, a guide to players and coaches on the improvements that will maximize winning potential, and much more. While the model is currently trained on data from professional men's tennis matches, it can be expanded in the future for compatibility with the women's tour and even for recreational/casual players.
 
 ## Code and Resources Used 
@@ -30,23 +30,14 @@ I acquired match data from [Jeff Sackmann's Github](https://github.com/JeffSackm
 \
 \
 After downloading the data, I needed to clean it up so that it was usable for our model. I made the following changes and created the following variables:
-*	Parsed the 'play-by-play' strings into useful statistics, I wrote a family of functions that extract relevant data (points, aces, breaks). 
-Furthermore, I performed feature engineering by quantifying the 'momentum' of a player based on consecutive points won. 
-Through the process of data acquisition, cleaning, and wrangling, I ended up with 925 samples and 23 features.
-*	Made columns for employer provided salary and hourly wages 
-*	Removed rows without salary 
-*	Parsed rating out of company text 
-*	Made a new column for company state 
-*	Added a column for if the job was at the company’s headquarters 
-*	Transformed founded date into age of company 
-*	Made columns for if different skills were listed in the job description:
-    * Python  
-    * R  
-    * Excel  
-    * AWS  
-    * Spark 
-*	Column for simplified job title and Seniority 
-*	Column for description length 
+* Removed matches from Wimbledon's Final Round Qualifying (they have different rules)
+* Parsed the 'play-by-play' strings into useful statistics with custom functions that extract relevant data (points, aces, breaks).
+* Feature engineered momentum to quantify trends not explicit in the data (based on consecutive points won)
+* Made a new column for points scored for each player
+* Made a new column for momentum accumulated for each player
+* Made a new column for breaks won for each player
+* Made a new column for aces served for each player
+* Resulted with 925 samples and 23 features.
 
 ## EDA
 I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables. 
