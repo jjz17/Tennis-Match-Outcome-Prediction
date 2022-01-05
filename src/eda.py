@@ -42,9 +42,9 @@ rel_columns = ['s1 fs momentum', 's2 fs momentum',
 
 ml_data = data[rel_columns].reset_index()
 
+plt.figure(figsize=(3, 3))
 sns.heatmap(ml_data.drop('index', axis=1).corr(), cmap="Blues")
 plt.title('Correlation Heatmap')
-plt.figure(figsize=(2, 2))
 save_figure('correlation_heatmap')
 plt.show()
 
@@ -55,6 +55,7 @@ less_data = data[most_important].reset_index()
 sns.pairplot(less_data)
 plt.show()
 
+plt.figure(figsize=(3, 3))
 sns.relplot(x='s1 fs points', y='s2 fs points', hue='s1 win', data=less_data)
 plt.title('S1 and S2 First Set Points with Match Outcome')
 save_figure('s1_s2_points_win_relplot')
@@ -86,6 +87,7 @@ plt.show()
 # plt.show()
 # data['s2 fs points'].hist()
 # plt.show()
+plt.figure(figsize=(4.5, 2))
 data['s1 fs points'].append(data['s2 fs points'], ignore_index=True).hist()
 plt.title('Combined Distribution of S1 and S2 First Set Points')
 save_figure('s1_s2_points_histogram')
