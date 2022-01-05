@@ -44,6 +44,7 @@ ml_data = data[rel_columns].reset_index()
 
 sns.heatmap(ml_data.drop('index', axis=1).corr(), cmap="Blues")
 plt.title('Correlation Heatmap')
+plt.figure(figsize=(2, 2))
 save_figure('correlation_heatmap')
 plt.show()
 
