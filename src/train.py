@@ -36,7 +36,6 @@ scaler = MinMaxScaler()
 scaler.fit(X_train)
 
 # Export scaler
-# scaler_filename = '../models/tennis_minmax_scaler2'
 scaler_filename = f'..{os.path.sep}models{os.path.sep}tennis_minmax_scaler'
 joblib.dump(scaler, scaler_filename)
 
@@ -125,9 +124,5 @@ best_selected_models = {}
 # Tune models
 f.hyperparameters_tuning(X_train_selected_scaled, X_test_selected_scaled, y_train, y_test, estimators_with_grids,
                          best_selected_models)
-
-
-
-
 
 # print([X_train_selected.columns])

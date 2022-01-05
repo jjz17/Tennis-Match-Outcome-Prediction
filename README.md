@@ -4,8 +4,9 @@ This is an individual project created through the Project Track of the [Snowball
 #### -- Project Status: Active
 
 ## Project Description
-* Created a tool that predicts tennis match outcomes (accuracy ~ 0.8276) to help players, coaches, and fans to better understand factors that may influence win likelihood
+* Created a tool that predicts tennis match outcomes (mean accuracy ~ 0.8276) to help players, coaches, and fans to better understand factors that may influence win likelihood
 * Engineered features from the play-by-play records of first sets to quantify player performance
+* Performed recursive feature selection to separate most relevant features
 * Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best model. 
 * Built a client facing API using streamlit
 
@@ -48,9 +49,9 @@ I looked at the distributions of the data and the value counts for the various q
 
 ## Model Building 
 
-First, I transformed the categorical variables into dummy variables. I also split the data into train and tests sets with a test size of 20%.   
+First, I split the data into train and tests sets with a test size of 25%.   
 
-I tried three different models and evaluated them using Mean Absolute Error. I chose MAE because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.   
+I tried five different models and evaluated them using mean accuracy. I chose mean accuracy because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.   
 
 I tried three different models:
 *	**Multiple Linear Regression** – Baseline for the model

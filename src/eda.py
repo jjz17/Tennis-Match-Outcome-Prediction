@@ -55,8 +55,7 @@ plt.show()
 most_important = ['s1 fs momentum', 's2 fs momentum', 's1 fs points', 's2 fs points', 's1 fs win', 's1 win']
 less_data = data[most_important].reset_index()
 # sns.pairplot(less_data)
-sns.pairplot(less_data)
-plt.show()
+# plt.show()
 
 # %%
 plt.figure(figsize=(3, 3))
@@ -88,6 +87,10 @@ plt.show()
 # %%
 sns.countplot(x='comeback', data=data)
 plt.title('Comeback Frequency')
+plt.show()
+
+sns.countplot(x='s1 fs win', data=data)
+plt.title('S1 and S2 Wins')
 plt.show()
 # %%
 # data['s1 fs points'].hist()

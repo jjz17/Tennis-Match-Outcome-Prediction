@@ -282,8 +282,6 @@ def hyperparameters_tuning(X_train, X_test, y_train, y_test, estimators_with_gri
 
         # Add the best model to dictionary
         best_models[estimator_name] = grid_search.best_estimator_
-    print()
-
 
 def recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features):
     select = RFE(DecisionTreeRegressor(random_state=3000), n_features_to_select=3)
