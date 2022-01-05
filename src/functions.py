@@ -256,7 +256,7 @@ def hyperparameters_tuning(X_train, X_test, y_train, y_test, estimators_with_gri
             and their parameter grids as values.
         best_models (dict): A dictionary with names of the models as keys.
     """
-    print("Results for Best Models Trained on All Features\n")
+    print("Results for Best Models Trained on Given Features\n")
     for estimator_name, estimator_objects in estimators_with_grids.items():
         estimator_model = estimator_objects[0]
         param_grid = estimator_objects[1]
@@ -282,6 +282,7 @@ def hyperparameters_tuning(X_train, X_test, y_train, y_test, estimators_with_gri
 
         # Add the best model to dictionary
         best_models[estimator_name] = grid_search.best_estimator_
+    print()
 
 
 def recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features):
@@ -299,3 +300,4 @@ def recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, featur
     print('Selected features:')
     for feature in selected_features:
         print('\t' + feature)
+    return selected_features

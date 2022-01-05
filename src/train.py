@@ -1,15 +1,18 @@
-import os
-import pandas as pd
-import functions as f
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-import joblib
 import _pickle as cPickle
+import os
+
+import joblib
+import numpy as np
+import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import LinearSVC
+from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.svm import LinearSVC
 from sklearn.tree import DecisionTreeClassifier
+
+import functions as f
 
 data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv', index_col=0)
 # url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
@@ -96,4 +99,35 @@ with open(f'..{os.path.sep}models{os.path.sep}logreg_model.pickle', 'wb') as out
 # os.chdir('..')
 # print(os.path.abspath(os.curdir))
 
-f.recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features)
+selected_features = f.recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features)
+
+# Extract selected features from the training and testing sets
+X_train_selected = X_train[selected_features]
+X_test_selected = X_test[selected_features]
+
+# Create the scaler
+scaler = MinMaxScaler()
+
+# Fit the scaler to the training data(features only)
+scaler.fit(X_train_selected)
+
+# Transform X_train and X_test based on the (same) scaler
+X_train_selected_scaled = scaler.transform(X_train_selected)
+X_test_selected_scaled = scaler.transform(X_test_selected)
+
+# Replace any potential NaN with 0
+X_train_selected_scaled[np.isnan(X_train_selected_scaled)] = 0
+X_test_selected_scaled[np.isnan(X_test_selected_scaled)] = 0
+
+# Dictionaries to store optimized model objects
+best_selected_models = {}
+
+# Tune models
+f.hyperparameters_tuning(X_train_selected_scaled, X_test_selected_scaled, y_train, y_test, estimators_with_grids,
+                         best_selected_models)
+
+
+
+
+
+# print([X_train_selected.columns])
