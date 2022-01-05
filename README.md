@@ -49,20 +49,30 @@ I looked at the distributions of the data and the value counts for the various q
 
 ## Model Building 
 
-First, I split the data into train and tests sets with a test size of 25%.   
+First, I split the data into train and tests sets with a test size of 25%.
 
-I tried five different models and evaluated them using mean accuracy. I chose mean accuracy because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.   
+I tried five different models and evaluated them using mean accuracy. I chose mean accuracy because it is relatively easy to interpret and the data is fairly balanced so mean accuracy provides an accurate measure for model performance.   
 
-I tried three different models:
-*	**Multiple Linear Regression** – Baseline for the model
-*	**Lasso Regression** – Because of the sparse data from the many categorical variables, I thought a normalized regression like lasso would be effective.
-*	**Random Forest** – Again, with the sparsity associated with the data, I thought that this would be a good fit. 
+I also performed recursive feature elimination to select the most relevant features
+
+Finally, I used GridSearchCV to perform hyperparameters tuning
+
+I used five different models:
+*	**Logistic Regression** – Highly efficient to train and classify new instances, easy to interpret.
+*	**kNN Classifier** – Intuitive algorithm and makes no assumptions about the data and its distribution.
+*	**Support Vector Machine** – Effective for classification in high dimensional spaces.
+*	**Gaussian Naive Bayes** – Similar to Logistic Regression, highly efficient to train and classify new instances, easy to interpret.
+*	**Decision Tree** – Similar to kNN Classifier, intuitive algorithm and makes no assumptions about the data and its distribution.
 
 ## Model performance
-The Random Forest model far outperformed the other approaches on the test and validation sets. 
-*	**Random Forest** : MAE = 11.22
-*	**Linear Regression**: MAE = 18.86
-*	**Ridge Regression**: MAE = 19.67
+After tuning, all of the models had equal performance on the test and validation sets. 
+* **Logistic Regression**: Accuracy = 0.8276
+* **kNN Classifier**: Accuracy = 0.8276
+* **Support Vector Machine**: Accuracy = 0.8276
+* **Gaussian Naive Bayes**: Accuracy = 0.8276
+* **Decision Tree**: Accuracy = 0.8276
+
+This led me to believe that one of the features was heavily influencing the outcome of the models, and I discovered that the first set winner was directly being used to predict the match winner.
 
 ## Productionization 
 In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary. 
