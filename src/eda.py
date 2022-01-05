@@ -11,6 +11,7 @@ data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv')
 plot_data = data[['s1 fs win', 's1 win']]
 
 plot_data.groupby('s1 fs win')['s1 win'].value_counts().unstack(0).plot.barh()
+plt.savefig(f'..{os.path.sep}visualizations{os.path.sep}s1_win_barplot.png')
 plt.show()
 
 # %%
