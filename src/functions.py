@@ -1,4 +1,6 @@
+from sklearn.feature_selection import RFE
 from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeRegressor
 
 
 def extract_game_data(game_pbp):
@@ -280,3 +282,20 @@ def hyperparameters_tuning(X_train, X_test, y_train, y_test, estimators_with_gri
 
         # Add the best model to dictionary
         best_models[estimator_name] = grid_search.best_estimator_
+
+
+def recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features):
+    select = RFE(DecisionTreeRegressor(random_state=3000), n_features_to_select=3)
+
+    # Fit the RFE selector to the training data
+    select.fit(X_train_scaled, y_train)
+
+    # Transform training and testing sets so only the selected features are retained
+    # X_train_scaled_selected = select.transform(X_train_scaled)
+    # X_test_scaled_selected = select.transform(X_test_scaled)
+
+    # Determine selected features
+    selected_features = [feature for feature, status in zip(features, select.get_support()) if status == True]
+    print('Selected features:')
+    for feature in selected_features:
+        print('\t' + feature)

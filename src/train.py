@@ -89,9 +89,11 @@ f.hyperparameters_tuning(X_train_scaled, X_test_scaled, y_train, y_test, estimat
 # pickle.dump(best_models['Logistic Regression'], open('tennis_prediction_model.pk1', 'wb'))
 # with open(r"models/logreg_model.pickle", "wb") as output_file:
 #     cPickle.dump(best_models['Logistic Regression'], output_file)
-with open('../models/logreg_model.pickle', 'wb') as output_file:
+with open(f'..{os.path.sep}models{os.path.sep}logreg_model.pickle', 'wb') as output_file:
     cPickle.dump(best_models['Logistic Regression'], output_file)
 
 # print(os.path.abspath(os.curdir))
 # os.chdir('..')
 # print(os.path.abspath(os.curdir))
+
+f.recursive_feature_elimination(X_train_scaled, X_test_scaled, y_train, features)
