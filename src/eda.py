@@ -3,6 +3,11 @@ import seaborn as sns
 import os
 import pandas as pd
 
+def save_figure(fig_name: str):
+    plt.savefig(f'..{os.path.sep}visualizations{os.path.sep}{fig_name}.png')
+
+#%%
+
 data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv')
 # url = 'https://raw.githubusercontent.com/jjz17/Tennis-Match-Outcome-Prediction/main/data/wrangled_data.csv'
 # data = pd.read_csv(url, index_col=0)
@@ -35,7 +40,9 @@ rel_columns = ['s1 fs momentum', 's2 fs momentum',
 
 ml_data = data[rel_columns].reset_index()
 
-sns.heatmap(ml_data.corr())
+sns.heatmap(ml_data.corr(), cmap="Blues")
+plt.title('Correlation Heatmap')
+save_figure('correlation_heatmap')
 plt.show()
 
 # %%
