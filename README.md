@@ -40,11 +40,11 @@ After downloading the data, I needed to clean it up so that it was usable for ou
 * Resulted with 925 samples and 23 features.
 
 ## EDA
-I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables. 
+I looked at the distributions of the data and the value counts for the various quantitative and categorical variables. Below are a few highlights from my analysis. 
 
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/salary_by_job_title.PNG "Salary by Position")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/positions_by_state.png "Job Opportunities by State")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/correlation_visual.png "Correlations")
+![alt text](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/blob/main/visualizations/s1_s2_points_histogram.png "First Set Points Distribution")
+![alt text](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/blob/main/visualizations/s1_s2_points_win_relplot.png "First Set Points Colored By Winner")
+![alt text](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/blob/main/visualizations/correlation_heatmap.png "Correlations")
 
 ## Model Building 
 
