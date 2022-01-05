@@ -98,6 +98,7 @@ In this step, I built a flask API endpoint that was hosted on a local webserver 
 - model and scaler objects are included under the [models](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/models) directory
 - Jupyter Notebook work is included under the [notebooks](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/notebooks) directory
 - all source code (data wrangling, exploratory data analysis, model building, custom functions) is included under the [src](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/src) directory
+- produced visualizations are included under the [visualizations](https://github.com/jjz17/Tennis-Match-Outcome-Prediction/tree/main/visualizations) directory
 
 [comment]: <> (## Needs of this project)
 
