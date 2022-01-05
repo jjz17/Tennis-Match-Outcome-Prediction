@@ -3,6 +3,7 @@ import seaborn as sns
 import os
 import pandas as pd
 
+# Saves images as png files
 def save_figure(fig_name: str):
     plt.savefig(f'..{os.path.sep}visualizations{os.path.sep}{fig_name}.png')
 
@@ -16,7 +17,8 @@ data = pd.read_csv(f'..{os.path.sep}data{os.path.sep}wrangled_data.csv')
 plot_data = data[['s1 fs win', 's1 win']]
 
 plot_data.groupby('s1 fs win')['s1 win'].value_counts().unstack(0).plot.barh()
-plt.savefig(f'..{os.path.sep}visualizations{os.path.sep}s1_win_barplot.png')
+# plt.savefig(f'..{os.path.sep}visualizations{os.path.sep}s1_win_barplot.png')
+save_figure('s1_win_barplot')
 plt.show()
 
 # %%
@@ -53,6 +55,8 @@ sns.pairplot(less_data)
 plt.show()
 
 sns.relplot(x='s1 fs points', y='s2 fs points', hue='s1 win', data=less_data)
+plt.title('S1 and S2 First Set Points with Match Outcome')
+save_figure('s1_s2_points_win_relplot')
 plt.show()
 
 sns.relplot(x='s1 fs momentum', y='s2 fs momentum', hue='s1 win', data=less_data)
@@ -65,6 +69,8 @@ sns.relplot(x='s2 fs points', y='s2 fs momentum', hue='s1 win', data=less_data)
 plt.show()
 
 sns.relplot(x='s1 fs points', y='s2 fs points', hue='comeback', data=data)
+plt.title('S1 and S2 First Set Points with Comeback Event')
+save_figure('s1_s2_points_comeback_relplot')
 plt.show()
 
 sns.relplot(x='s1 fs momentum', y='s2 fs momentum', hue='comeback', data=data)
@@ -72,6 +78,7 @@ plt.show()
 
 #%%
 sns.countplot(x='comeback', data=data)
+plt.title('Comeback Frequency')
 plt.show()
 # sns.catplot(x='comeback', y='s1 fs points', kind='bar', data=data)
 # plt.title('Test')
