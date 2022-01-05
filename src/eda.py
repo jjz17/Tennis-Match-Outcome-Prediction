@@ -42,7 +42,7 @@ rel_columns = ['s1 fs momentum', 's2 fs momentum',
 
 ml_data = data[rel_columns].reset_index()
 
-sns.heatmap(ml_data.corr(), cmap="Blues")
+sns.heatmap(ml_data.drop('index', axis=1).corr(), cmap="Blues")
 plt.title('Correlation Heatmap')
 save_figure('correlation_heatmap')
 plt.show()
