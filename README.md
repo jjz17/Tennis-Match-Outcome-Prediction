@@ -29,7 +29,8 @@ recreational/casual players.
 
 **Python Version:** 3.8  
 **Packages:** pandas, numpy, sklearn, matplotlib, seaborn, streamlit, pickle  
-**For Web Framework Requirements:**  ```pip install -r requirements.txt```  
+
+[comment]: <> (**For Web Framework Requirements:**  ```pip install -r requirements.txt```  )
 **Dataset GitHub:** https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/pbp_matches_atp_qual_current.csv  
 **Streamlit Productionization:** https://github.com/dataprofessor/code/tree/master/streamlit/part7
 
@@ -101,8 +102,8 @@ After tuning, all of the models had equal performance on the test and validation
 * **Decision Tree**: Accuracy = 0.8276
 
 This led me to believe that one of the features was heavily influencing the outcome of the models, and I discovered that
-the first set winner was directly being used to predict the match winner. Thus, none of the other features were creating
-additional insights.
+the first set winner feature was directly being used to predict the match winner. Thus, none of the other features were 
+creating additional insights.
 
 ## Productionization
 
