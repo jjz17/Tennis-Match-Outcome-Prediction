@@ -48,7 +48,7 @@ from [Jeff Sackmann's Github](https://github.com/JeffSackmann/tennis_pointbypoin
 .
 \
 \
-After downloading the data, I needed to clean it up so that it was usable for our model. I made the following changes
+After downloading the data, I needed to clean it up so that it was usable for the model. I made the following changes
 and created the following variables:
 
 * Removed matches from Wimbledon's Final Round Qualifying (they have different rules)
