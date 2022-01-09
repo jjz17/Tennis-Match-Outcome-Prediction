@@ -53,13 +53,13 @@ and created the following variables:
 
 * Removed matches from Wimbledon's Final Round Qualifying (they have different rules)
 * Parsed the 'play-by-play' strings into useful statistics with custom functions that extract relevant data (points,
-  aces, breaks).
+  aces, breaks)
 * Feature engineered momentum to quantify trends not explicit in the data (based on consecutive points won)
 * Made a new column for points scored for each player
 * Made a new column for momentum accumulated for each player
 * Made a new column for breaks won for each player
 * Made a new column for aces served for each player
-* Resulted with 925 samples and 23 features.
+* Resulted with 925 samples and 23 features
 
 ## EDA
 
