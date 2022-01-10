@@ -91,7 +91,7 @@ I used five different models:
 * **Decision Tree** – Similar to kNN Classifier, intuitive algorithm and makes no assumptions about the data and its
   distribution.
 
-## Model performance
+## Model Performance
 
 After tuning, all of the models had equal performance on the test and validation sets.
 
