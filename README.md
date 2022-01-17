@@ -14,7 +14,7 @@ at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
 * Performed recursive feature selection to separate most relevant features
 * Optimized Logistic Regression, kNN, Decision Trees, Naive Bayes, Linear SVM using GridsearchCV to reach the best
   model.
-* Built a client facing API using streamlit
+* Built an interactive website using Streamlit
 
 ## Purpose/Objective
 
@@ -107,8 +107,8 @@ creating additional insights.
 
 ## Productionization
 
-In this step, I built a Streamlit API that was hosted on a local webserver by following along with the tutorial in the
-reference section above. The API takes in a first set play-by-play encoded string and computes match statistics and
+In this step, I built an interactive Streamlit website that was hosted on a local webserver by following along with the tutorial in the
+reference section above. The site takes in a first set play-by-play encoded string and computes match statistics and
 returns a prediction for the winner of the match.
 
 ## Project Structure
