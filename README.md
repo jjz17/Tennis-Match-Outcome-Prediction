@@ -4,7 +4,7 @@ This is an individual project created through the Project Track of
 the [Snowball Initiative](https://dataclub.northeastern.edu/snowball/)
 at [Northeastern Data Club](http://www.https://dataclub.northeastern.edu/).
 
-#### -- Project Status: Active
+#### -- Project Status: Completed
 
 ## Project Description
 
